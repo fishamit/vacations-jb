@@ -16,12 +16,11 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import { useHistory } from "react-router";
 import { createCardDateString } from "../utils/createDateString";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   root: {
     margin: "0 auto",
     backgroundColor: "#ffffff66",
     backdropFilter: "blur(20px)",
-    // maxWidth: 600,
     minWidth: 375,
   },
   media: {
@@ -36,7 +35,7 @@ const useStyles = makeStyles(theme => ({
   description: {
     height: 75,
   },
-}));
+});
 
 export default function VacationCard({ vacation }) {
   const classes = useStyles();

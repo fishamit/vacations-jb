@@ -22,4 +22,7 @@ export default createMuiTheme({
       main: "#fdd835",
     },
   },
+  shape: {
+    borderRadius: 20,
+  },
 });
