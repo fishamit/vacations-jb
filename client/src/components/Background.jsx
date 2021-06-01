@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Cloud from "./Cloud";
 import Airplane from "./Airplane";
 
 function Background() {
+  const [nClouds, setnClouds] = useState([]);
+
+  useEffect(() => {
+    const n = 8;
+    // const n = (window.innerWidth * window.innerHeight) / 200000;
+    const arr = [];
+    for (let i = 0; i < n; i++) arr.push(i);
+    setnClouds(arr);
+  }, []);
+
   return (
     <>
-      {[1, 2, 3, 4, 5, 6, 7, 8].map(cloud => (
-        <Cloud key={cloud} width={Math.random() * 700 + 100} />
-      ))}
+      {nClouds.map(
+        (
+          cloud //give cloud a size between 1-5 and then make a formula inside setWidth.
+        ) => (
+          <Cloud key={cloud} size={Math.floor(Math.random() * 25 + 5)} />
+        )
+      )}
       <Airplane />
     </>
   );

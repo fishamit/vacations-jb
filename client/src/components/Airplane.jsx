@@ -7,12 +7,11 @@ const useStyles = makeStyles(theme => ({
   cAirplane: {
     position: "fixed",
     width: 200,
-    top: window.innerHeight - 200,
+    bottom: -200,
     left: -200,
     zIndex: -2,
     animationDuration: "20s",
     transform: "rotate(-35deg)",
-
     animation: `$myEffect linear`,
     animationIterationCount: 1,
     animationFillMode: "none",
@@ -20,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   "@keyframes myEffect": {
     "100%": {
       left: window.innerWidth + 200,
-      top: -200,
+      bottom: window.innerHeight,
     },
   },
 }));
